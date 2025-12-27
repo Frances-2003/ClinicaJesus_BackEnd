@@ -150,4 +150,14 @@ public class UsuarioServiceImpl implements UsuarioService {
         );
     }
 
+    @Override
+    public UsuarioResponse cambiarRol(Long id, rolUsuario rol) {
+        UsuarioEntity usuario = usuarioRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Usuario no encontrado con id: " + id));
+
+        usuario.setRol(rol);
+        UsuarioEntity actualizado = usuarioRepository.save(usuario);
+        return usuarioMapper.toDto(actualizado);
+    }
+
 }

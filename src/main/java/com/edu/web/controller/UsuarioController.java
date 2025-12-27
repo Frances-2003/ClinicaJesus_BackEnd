@@ -2,6 +2,7 @@ package com.edu.web.controller;
 
 
 import com.edu.application.service.UsuarioService;
+import com.edu.web.dto.usuario.CambiarRolRequest;
 import com.edu.web.dto.usuario.UsuarioRequest;
 import com.edu.web.dto.usuario.UsuarioResponse;
 import lombok.RequiredArgsConstructor;
@@ -52,5 +53,13 @@ public class UsuarioController {
     public ResponseEntity<Void> eliminar(@PathVariable Long id) {
         usuarioService.eliminar(id);
         return ResponseEntity.noContent().build();
+    }
+
+    @PutMapping("/{id}/rol")
+    public ResponseEntity<UsuarioResponse> cambiarRol(
+            @PathVariable Long id,
+            @RequestBody CambiarRolRequest request
+    ) {
+        return ResponseEntity.ok(usuarioService.cambiarRol(id, request.rol()));
     }
 }

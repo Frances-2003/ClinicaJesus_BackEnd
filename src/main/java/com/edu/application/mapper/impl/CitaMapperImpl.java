@@ -25,7 +25,6 @@ public class CitaMapperImpl implements CitaMapper {
                 .doctor(doctor)
                 .horarioDisponible(horarioDisponible)
                 .motivoConsulta(request.motivoConsulta())
-                // precio, moneda, estado, fechaHoraCreacion los setea el service o @PrePersist
                 .build();
     }
 

@@ -38,14 +38,17 @@ public class HorarioDispEntity {
     private DoctorEntity doctor;
 
     // Día específico del horario (ej: 2025-12-09)
+
     @Column(nullable = false)
     private LocalDate fecha;
 
     // Inicio del bloque de 30 minutos (ej: 10:00)
+
     @Column(name = "hora_inicio", nullable = false)
     private LocalTime horaInicio;
 
     // Fin del bloque (por defecto = horaInicio + 30 minutos)
+
     @Column(name = "hora_fin", nullable = false)
     private LocalTime horaFin;
 

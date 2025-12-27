@@ -67,6 +67,13 @@ public class DoctorServiceImpl implements DoctorService {
     }
 
     @Override
+    public List<DoctorResponse> listar1() {
+        return doctorRepository.findByActivoTrue().stream()
+                .map(doctorMapper::toDto)
+                .toList();
+    }
+
+    @Override
     public List<DoctorResponse> listarPorEspecialidad(Long especialidadId) {
         return doctorRepository.findByEspecialidadIdAndActivoTrue(especialidadId)
                 .stream()

@@ -1,5 +1,6 @@
 package com.edu.application.service;
 
+import com.edu.domain.recurs.rolUsuario;
 import com.edu.web.dto.login.LoginRequest;
 import com.edu.web.dto.login.LoginResponse;
 import com.edu.web.dto.usuario.UsuarioRequest;
@@ -20,4 +21,7 @@ public interface UsuarioService {
     void eliminar(Long id); // eliminación lógica (activo = false)
 
     LoginResponse login(LoginRequest request);
+
+
+    UsuarioResponse cambiarRol(Long id, rolUsuario rol);
 }

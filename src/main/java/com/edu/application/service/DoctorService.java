@@ -17,4 +17,6 @@ public interface DoctorService {
     DoctorResponse actualizar(Long id, DoctorRequest request);
 
     void eliminar(Long id);
+
+    List<DoctorResponse> listar1();
 }
